@@ -130,6 +130,15 @@ RATING;
 ---
 
 
+**Query #4**
+
+select MOV_TITLE,REV_STARS from MOVIES M,RATING R WHERE M.MOV_ID=R.MOV_ID AND REV_STARS IN (SELECT MAX(REV_STARS) FROM RATING) ORDER BY MOV_TITLE
+
+
+|MOV_TITLE| REV_STARS |
+|---------|---------  |
+|AKASH	  |     6     |
+
 **Query #5**
 
     update RATING set REV_STARS =5
